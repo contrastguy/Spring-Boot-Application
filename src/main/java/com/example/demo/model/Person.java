@@ -6,15 +6,13 @@ import java.util.UUID;
 
 public class Person {
     //Atributos
-    private final  UUID id;
-    private final String name;
-    private final B mostSigBits
+    private UUID id;
 
-
+    private String name;
 
     //Construtor
-    public Person(@JsonProperty("id") UUID id,@JsonProperty("name") String name) {
-        this.id = id;
+    public Person( @JsonProperty("name") String name) {
+        this.id = UUID.randomUUID();
         this.name = name;
     }
 
