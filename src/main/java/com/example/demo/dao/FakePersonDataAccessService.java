@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Component("fakeDao")
-public class FakePersonDataAccessService implements  PersonDao{
+public abstract class FakePersonDataAccessService implements  PersonDao{
 
     private static List<Person> DB = new ArrayList<>();
     @Override
@@ -23,9 +23,10 @@ public class FakePersonDataAccessService implements  PersonDao{
         return DB;
     }
 
+
     @Override
-    public Optional<Person> selectPersonById(Person person) {
-        return DB.stream();
+    public Optional<Person> selectPersonById(UUID id) {
+        return DB.stream().filter(person -> person.getId().equals(id)).findFirst();
     }
 
     @Override

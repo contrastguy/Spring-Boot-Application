@@ -14,7 +14,7 @@ public interface PersonDao {
     }
     List<Person> selectAllPeople();
 
-    Optional<Person> selectPersonById(Person person);
+    Optional<Person> selectPersonById(UUID id);
 
     int deletePersonById(Person person);
 
