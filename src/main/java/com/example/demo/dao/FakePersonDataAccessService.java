@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Component("fakeDao")
-public abstract class FakePersonDataAccessService implements  PersonDao{
+public  class FakePersonDataAccessService implements  PersonDao{
 
     private static List<Person> DB = new ArrayList<>();
     @Override
@@ -30,12 +30,13 @@ public abstract class FakePersonDataAccessService implements  PersonDao{
     }
 
     @Override
-    public int deletePersonById(Person person) {
+    public int deletePersonById(UUID id) {
         return 0;
     }
 
     @Override
-    public int updatePersonById(Person person) {
+    public int updatePersonById(UUID id, Person person) {
         return 0;
     }
+
 }
